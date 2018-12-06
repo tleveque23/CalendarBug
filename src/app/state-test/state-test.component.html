@@ -1,0 +1,73 @@
+<p-table #dataSetsTable [value]="dataSetsList" dataKey="id"  sortMode="multiple"
+         [rowHover]="true" expandablerows="false" [paginator]="true" [rows]="rowsPerPage" [first]="firstRow" [pageLinks]="3" [rowsPerPageOptions]="[10,25,50]"
+         stateStorage="local" [stateKey]="'stateTest'">
+
+  <ng-template pTemplate="header">
+
+    <!-- HEADER 1 (Column names) -->
+    <tr class="table-header">
+
+      <!-- Name -->
+      <th pSortableColumn="name" style="width: 40%;">Name <p-sortIcon field="name"></p-sortIcon>
+      </th>
+
+      <!-- Description -->
+      <th pSortableColumn="description" >Description <p-sortIcon field="description"></p-sortIcon></th>
+
+      <!-- Action Buttons -->
+      <th style="width: 150px" rowspan="2">Action</th>
+
+    </tr>
+
+    <!-- FILTERS-->
+    <tr>
+
+      <!-- Name -->
+      <th>
+        <input id="filter-name" pInputText type="text" [placeholder]="'Contains'"  (input)="dataSetsTable.filter($event.target.value, 'name', 'contains')" [value]="dataSetsTable.filters['name']?.value" class="filter-input">
+      </th>
+
+      <!-- Description -->
+      <th>
+        <input id="filter-description" pInputText type="text" [placeholder]="'Contains'"  (input)="dataSetsTable.filter($event.target.value, 'description', 'contains')" [value]="dataSetsTable.filters['description']?.value"  class="filter-input">
+      </th>
+
+      <!-- Column Buttons -->
+      <!--<th></th> commented out because of the row span in previous row -->
+
+    </tr>
+  </ng-template>
+
+
+  <!-- BODY -->
+  <ng-template pTemplate="body" let-datasets let-rowIndex="rowIndex" let-expanded="expanded">
+
+    <tr id="datasets-row{{rowIndex+1}}" class="table-clickable-row">
+
+      <!-- Name -->
+      <td id="datasets-name-{{rowIndex+1}}" class="cell-break-word component-name">{{datasets.name}}</td>
+
+      <!-- Description -->
+      <td id="datasets-owner-{{rowIndex+1}}" style="text-align: left; word-break: break-all;">
+        {{datasets.description}}
+      </td>
+
+      <!-- Action Buttons -->
+      <td style="text-align: center" (click)="$event.stopPropagation()" class="table-button-cell">
+
+        buttons...
+
+      </td>
+
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="emptymessage" let-columns>
+    <tr style="cursor: default;">
+      <td id="empty-list-message" [attr.colspan]="3" style="padding: 10px; text-align: center">
+        Empty!
+      </td>
+    </tr>
+  </ng-template>
+
+</p-table>

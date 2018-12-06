@@ -7,10 +7,13 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule, OverlayPanelModule } from 'primeng/primeng';
 import { FormsModule } from '@angular/forms';
+import { StateTestComponent } from './state-test/state-test.component';
+import { DataSetsService } from './state-test/data-sets.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StateTestComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,9 @@ import { FormsModule } from '@angular/forms';
     CalendarModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    DataSetsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
