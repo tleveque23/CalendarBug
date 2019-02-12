@@ -1,5 +1,5 @@
 
-<!--<p-table #executionTable [value]="cars">
+<p-table #executionTable [value]="cars">
 
   <ng-template pTemplate="header">
     <tr>
@@ -11,7 +11,7 @@
 
     <tr>
 
-      &lt;!&ndash; Column Queued On &ndash;&gt;
+      <!-- Column Queued On -->
       <th>
         <button id="queued-on-filter-button" pButton icon="fa fa-filter" (click)="queuedOnOverlayPanel.toggle($event)" ></button>
         <p-overlayPanel #queuedOnOverlayPanel [appendTo]="'body'">
@@ -32,7 +32,7 @@
         </p-overlayPanel>
       </th>
 
-      &lt;!&ndash; Column Started On &ndash;&gt;
+      <!-- Column Started On -->
       <th>
         <button id="started-on-filter-button" pButton icon="fa fa-filter" (click)="startedOnOverlayPanel.toggle($event)" ></button>
         <p-overlayPanel #startedOnOverlayPanel [appendTo]="'body'">
@@ -53,7 +53,7 @@
         </p-overlayPanel>
       </th>
 
-      &lt;!&ndash; Column Completed On &ndash;&gt;
+      <!-- Column Completed On -->
       <th>
         <button id="completed-on-filter-button" pButton icon="fa fa-filter" (click)="completedOnOverlayPanel.toggle($event)" ></button>
         <p-overlayPanel #completedOnOverlayPanel [appendTo]="'body'">
@@ -74,7 +74,7 @@
         </p-overlayPanel>
       </th>
 
-      &lt;!&ndash; Column Created By &ndash;&gt;
+      <!-- Column Created By -->
       <th>
         <input pInputText type="text" [(ngModel)]="createdByFilter"  (input)="executionTable.filter($event.target.value, 'createdBy', 'contains')" class="filter-input">
       </th>
@@ -93,9 +93,9 @@
       <td>{{car.color}}</td>
     </tr>
   </ng-template>
-</p-table>-->
+</p-table>
 
 
 <br/>
 
-<app-state-test></app-state-test>
+<!--<app-state-test></app-state-test>-->

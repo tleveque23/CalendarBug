@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
-import { CalendarModule, OverlayPanelModule } from 'primeng/primeng';
+import { CalendarModule, MultiSelectModule, OverlayPanelModule } from 'primeng/primeng';
 import { FormsModule } from '@angular/forms';
 import { StateTestComponent } from './state-test/state-test.component';
 import { DataSetsService } from './state-test/data-sets.service';
@@ -22,7 +22,8 @@ import { DataSetsService } from './state-test/data-sets.service';
     ButtonModule,
     OverlayPanelModule,
     CalendarModule,
-    FormsModule
+    FormsModule,
+    MultiSelectModule
   ],
   providers: [
     DataSetsService
